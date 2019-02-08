@@ -1,4 +1,4 @@
-;;; Autore: Cogo Luca 830045
+;;; Autore: Cogo Luca
 
 
 (defun lmc-run (filename in)
