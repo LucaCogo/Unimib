@@ -1,4 +1,4 @@
-%Autore: Cogo Luca 830045
+%Autore: Cogo Luca
 
 
 lmc_run(Filename, In, Out) :-
@@ -202,7 +202,7 @@ add_ctrl(Td, noflag) :-
     Td < 1000,
     !.
 
-%%% Controlla se il contenuto del registro è positivo o negativo
+%%% Controlla se il contenuto del registro Ã¨ positivo o negativo
 sub_ctrl(Td, flag) :-
     Td < 0,
     !.
@@ -217,7 +217,7 @@ replace(I, L, N, K) :-
     nth0(I, L, _, R),
     nth0(I, K, N, R).
 
-%%% Controlla che il flag sia attivo, se non lo è restituisce false,
+%%% Controlla che il flag sia attivo, se non lo Ã¨ restituisce false,
 %%% serve per BRZ e BRP
 no_flag(noflag).
 
@@ -291,14 +291,14 @@ remove_empty([H1|T1], [H1|T2]) :-
 
 
 
-%%% Controlla se c'è uno / e restituisce quello che c'è dopo
+%%% Controlla se c'Ã¨ uno / e restituisce quello che c'Ã¨ dopo
 first_ctrl(['/'|T], T) :-
     !.
 
 first_ctrl([_|T], L) :-
     first_ctrl(T, L).
 
-%%% Guarda se la testa è uno / (usata in combinazione con first_ctrl)
+%%% Guarda se la testa Ã¨ uno / (usata in combinazione con first_ctrl)
 next_ctrl(['/'|_]).
 
 
@@ -373,7 +373,7 @@ extract_label(Str, _, _) :-
     !,
     fail.
 
-%%% Una riga del tipo "DAT label" non è accettata
+%%% Una riga del tipo "DAT label" non Ã¨ accettata
 extract_label(Str, _, _) :-
     split_string(Str, " ", " ", [Ta, Tb|_]),
     Ta = "DAT",
@@ -381,7 +381,7 @@ extract_label(Str, _, _) :-
     !,
     fail.
 
-%%% Una riga del tipo "label DAT label" non è accettata
+%%% Una riga del tipo "label DAT label" non Ã¨ accettata
 extract_label(Str, _, _) :-
     split_string(Str, " ", " ", [_, Tb, Tc|_]),
     Tb = "DAT",
@@ -409,7 +409,7 @@ losts([H1|T1], S, String) :-
     atom_concat(Ta, " ", Tb),
     losts(T1, Tb, String).
 
-%%% Restituisce true se Str è un numero
+%%% Restituisce true se Str Ã¨ un numero
 is_not_a_number(Str) :-
     atom_number(Str, _),
     !,
@@ -522,7 +522,7 @@ convert("HLT", 0).
 
 convert("DAT", 0).
 
-%%% Se la memoria è >100 errore,
+%%% Se la memoria Ã¨ >100 errore,
 %%% se <100 faccio padding
 mem_padding(X, Mem) :-
     length(X, Ta),
